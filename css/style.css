@@ -250,6 +250,7 @@ footer .contetn-footer p {
 footer .content-footer .end{
     color: var(--primaryColor);
     margin-top: 1rem;
+   text-align: center;
 } 
 
 #menu{

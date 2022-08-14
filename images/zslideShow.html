@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>TDH</h1>
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+    </header>
+
+    <img src="aa.png" alt="slide show image" id="slide" width="40%">
+
+    <p><a href="#" id="previous">previous</a>--- <a href="#" id="next">next</a></p>
+
+    <script>
+
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+        }
+
+
+        //this is for the slid images and it is cool
+        var images = ['aa.png', 'bg.jpg', 'bgb.png', 'bootstrap.png', 'css.png', 'excel.png', 'facebook.png', 'html.png'];
+        var currentImage = 0;
+
+        document.getElementById('next').onclick = nextPhoto;
+
+        function nextPhoto(){
+            currentImage++;
+            if ( currentImage > images.length-1) {
+                currentImage = 0;
+            }
+            else{
+            document.getElementById('slide').src = images[currentImage];
+            }
+        }
+
+        document.getElementById('previous').onclick = previousPhoto;
+
+        function previousPhoto(){
+            currentImage--;
+            if ( currentImage < 0){
+                currentImage = images.length-1;
+            }
+            else{
+                document.getElementById("slide").src = images[currentImage];
+            }
+        }
+    </script>
+</body>
+</html>
